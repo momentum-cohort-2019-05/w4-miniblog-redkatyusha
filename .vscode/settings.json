@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/Users/dawnlifsey/.local/share/virtualenvs/w4-miniblog-redkatyusha-RPDCrL3A/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.prospectorEnabled": true,
+    "python.linting.enabled": true
+}
