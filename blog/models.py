@@ -7,6 +7,7 @@ class BlogPost(models.Model):
     blogger = models.ForeignKey('Blogger', on_delete=models.SET_NULL, null=True)
     summary = models.TextField(max_length=1000, help_text="Enter a short summary of the blog post.")
     pubdate = models.DateField(date.today())
+    body_text = models.TextField
 
     def __str__(self):
         return self.title
