@@ -6,7 +6,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=250)
     blogger = models.ForeignKey('Blogger', on_delete=models.SET_NULL, null=True)
     summary = models.TextField(max_length=1000, help_text="Enter a short summary of the blog post.")
-    pubdate = models.DateField(date.today())
+    date_posted = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     body_text = models.TextField(max_length=1000000)
 
     def __str__(self):
@@ -16,7 +16,7 @@ class BlogPost(models.Model):
         return reverse('blog-post', args=[str(self.id)])
 
     class Meta:
-        ordering = ['-pubdate', 'blogger']
+        ordering = ['-date_posted', 'blogger']
 
 class Blogger(models.Model):
     first_name = models.CharField(max_length=100)
